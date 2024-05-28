@@ -13,7 +13,7 @@ app.use(express.json());
 // CORS
 app.use( 
   cors({
-    origin: ["https://quotequill.vercel.app"],
+    origin: ["https://qq-delta-nine.vercel.app"],
     // origin: ["http://127.0.0.1:5500"],
     methods: ["POST", "GET", "UPDATE", "DELETE"],
     credentials: true,
