@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>POST</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+      /* Import Google Font - Poppins */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        background: #5372f0;
+      }
+      .wrapper {
+        width: 605px;
+        background: #fff;
+        border-radius: 15px;
+        padding: 30px 30px 25px;
+        box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+      }
+      header,
+      .content :where(i, p, span) {
+        color: #202842;
+      }
+      .wrapper header {
+        font-size: 35px;
+        font-weight: 600;
+        text-align: center;
+      }
+      .wrapper .content {
+        margin: 35px 0;
+      }
+      .content .quote-area {
+        display: flex;
+        justify-content: center;
+      }
+      .quote-area i {
+        font-size: 15px;
+      }
+      .quote-area i:first-child {
+        margin: 3px 10px 0 0;
+      }
+      .quote-area i:last-child {
+        display: flex;
+        margin: 0 0 3px 10px;
+        align-items: flex-end;
+      }
+      .quote-area .quote {
+        font-size: 22px;
+        text-align: center;
+        word-break: break-all;
+      }
+      .content .author {
+        display: flex;
+        font-size: 18px;
+        margin-top: 20px;
+        font-style: italic;
+        justify-content: flex-end;
+      }
+      .author span:first-child {
+        margin: -7px 5px 0 0;
+        font-family: monospace;
+      }
+      .wrapper .buttons {
+        border-top: 1px solid #ccc;
+      }
+      .buttons .features {
+        display: flex;
+        margin-top: 20px;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .features ul {
+        display: flex;
+      }
+      .features ul li {
+        margin: 0 5px;
+        height: 47px;
+        width: 47px;
+        display: flex;
+        cursor: pointer;
+        color: #5372f0;
+        list-style: none;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid #5372f0;
+        transition: all 0.3s ease;
+      }
+      .features ul li:first-child {
+        margin-left: 0;
+      }
+      ul li:is(:hover, .active) {
+        color: #fff;
+        background: #5372f0;
+      }
+      ul .heart.active {
+        pointer-events: none;
+      }
+      .buttons button {
+        border: none;
+        color: #fff;
+        outline: none;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 13px 22px;
+        border-radius: 30px;
+        background: #5372f0;
+      }
+      .buttons button.loading {
+        opacity: 0.7;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>Quote of the Day</header>
+      <div class="content">
+        <div class="quote-area">
+          <i class="fas fa-quote-left"></i>
+          <p class="quote" id="textToCopy">
+            Never give up because you never know if the next try is going to be
+            the one that works.
+          </p>
+          <i class="fas fa-quote-right"></i>
+        </div>
+        <div class="author">
+          <span>__</span>
+          <span class="name">Mary Kay Ash</span>
+        </div>
+      </div>
+      <div class="buttons">
+        <div class="features">
+          <ul>
+            <li class="heart"><i class="fas fa-heart"></i></li>
+            <li class="copy" id="copyButton"><i class="fas fa-copy"></i></li>
+            <li class="twitter"><i class="fab fa-twitter"></i></li>
+          </ul>
+          <button>Motivation</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("#copyButton").click(function () {
+          var textToCopy = $("#textToCopy").text();
+
+          navigator.clipboard
+            .writeText(textToCopy)
+            .then(function () {
+              alert("Text copied to clipboard");
+            })
+            .catch(function (err) {
+              console.error("Failed to copy text: ", err);
+            });
+        });
+      });
+    </script>
+  </body>
+</html>

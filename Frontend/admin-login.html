@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js"></script>
+
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  />
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/bs-brain@2.0.4/components/registrations/registration-5/assets/css/registration-5.css"
+  />
+  <script src="js/admin-login.js"></script>
+  <style>
+    * {
+      padding: 0px;
+      margin: 0px;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      position: relative;
+      top: -10px;
+    }
+
+    .context {
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: rgb(26, 158, 156);
+    }
+
+    .gateway {
+      background-color: rgb(255, 255, 255);
+      height: 85%;
+      width: 90%;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .h3 {
+      font-family: "Times New Roman", Times, serif;
+    }
+  </style>
+
+  <body>
+    <div class="container-fluid context">
+      <div class="gateway">
+        <!-- <div class="left">
+          <img src="login-img.png" alt="" />
+        </div>
+        <div class="right">
+          <h3>Enter as:</h3>
+          <a href="admin-login.html"><div class="admin">Admin</div></a>
+          <a href="guest-register.html"><div class="guest">Guest</div></a>
+        </div> -->
+
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6 col-xxl-5">
+              <div class="card border-2">
+                <div class="card-body p-3 p-md-4 p-xl-5">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="mb-5">
+                        <h5 class="h3">Welcome Admin</h5>
+                      </div>
+                    </div>
+                  </div>
+                  <form id="myForm">
+                    <div class="row gy-3 overflow-hidden">
+                      <div class="col-12">
+                        <div class="form-floating mb-3">
+                          <input
+                            type="email"
+                            class="form-control"
+                            name="email"
+                            id="email"
+                            value="admin@email.com"
+                            placeholder="name@example.com"
+                            required
+                          />
+                          <label for="email" class="form-label">Email</label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-floating mb-3">
+                          <input
+                            type="password"
+                            class="form-control"
+                            name="password"
+                            id="password"
+                            value="23123"
+                            placeholder="Password"
+                            required
+                          />
+                          <label for="password" class="form-label"
+                            >Password</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="d-grid">
+                          <button
+                            class="btn bsb-btn-2xl btn-primary admin-login-btn"
+                            type="submit"
+                          >
+                            Log In
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

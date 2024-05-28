@@ -1,0 +1,149 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+.context {
+  background-color: rgb(255, 255, 255);
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.header {
+  background-color: rgb(6, 11, 171);
+  /* position: absolute; */
+  color: white;
+  width: 102%;
+  position: relative;
+  right: 15px;
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.download-icon, .logout-icon{
+  position: relative;
+  top: 5px;
+  left: 5px;
+  color: white;
+}
+
+.edit-icon{
+  left: 10px;
+  position: relative;
+}
+.export-csv{
+  /* background-color: red; */
+  width: 120px;
+  height: 50px;
+  right: 74%;
+  position: absolute;
+  color: rgb(0, 0, 0);
+}
+
+.logout{
+  position: relative;
+  left: 40px;
+  width: 120px;
+  height: 50px;
+  
+}
+
+.export-csv,
+.logout {
+  margin-left: 10px;
+  padding: 8px;
+  font-family: "Times New Roman", Times, serif;
+  border: none;
+  cursor: pointer;
+}
+
+.left {
+  font-size: 40px;
+  font-weight: 800;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.right {
+  /* background-color: yellow; */
+  width: 10%;
+  position: relative;
+  right: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.content {
+  position: relative;
+  /* top: 20px; */
+  display: flex;
+  flex-direction: column;
+}
+
+.data-head {
+  /* background-color: rgb(0, 0, 0); */
+  position: relative;
+  align-items: center;
+  color: rgb(0, 0, 0);
+  font-weight: 900;
+  top: 20px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+th {
+  color: black;
+}
+
+.data {
+  position: relative;
+  top: 40px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  /* padding: 20px; */
+}
+
+.data > * {
+  margin: 10px 10px 10px 10px;
+}
+
+/* .logout-admin {
+  background-color: red;
+  position: relative;
+  width: 140px;
+  padding: 10px;
+  position: relative;
+  color: white;
+  border: none;
+  cursor: pointer;
+  left: 90%;
+  align-items: flex-start;
+  top: 20px;
+} */
+
+.total {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  width: 200px;
+  height: 100px;
+}
+
+.action {
+  cursor: pointer;
+  size: 20px 20px;
+}
+
+.action:hover {
+  color: red;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        position: relative;
+      }
+
+      .section {
+        padding: 20px;
+        margin-bottom: 20px;
+        background-color: #f0f0f0;
+      }
+
+      .first-section {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+      }
+    </style>
+
+    <script>
+      $(document).ready(function () {
+        $(window).scroll(function () {
+          var scroll = $(window).scrollTop();
+          var sectionOffset = $(".container").offset().top;
+
+          if (scroll > sectionOffset) {
+            $(".first-section").addClass("fixed");
+          } else {
+            $(".first-section").removeClass("fixed");
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="navbar">
+      <!-- Navbar content here -->
+    </div>
+
+    <div class="container">
+      <div class="section first-section">
+        <!-- Content of first section -->
+      </div>
+
+      <div class="section second-section">
+        <!-- Content of second section -->
+      </div>
+    </div>
+  </body>
+</html>
