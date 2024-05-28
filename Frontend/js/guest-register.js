@@ -8,7 +8,7 @@ $(document).ready(() => {
       let email = $("#email").val();
       let password = $("#password").val();
 
-      let response = await fetch("http://127.0.0.1:3000/guest-register", {
+      let response = await fetch("https://quotequill.onrender.com/guest-register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

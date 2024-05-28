@@ -23,7 +23,7 @@ $(document).ready(() => {
 
   const retrive = async () => {
     try {
-      let response = await fetch("http://127.0.0.1:3000/data", {
+      let response = await fetch("https://quotequill.onrender.com/data", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -70,7 +70,7 @@ $(document).ready(() => {
             const remove = async () => {
               try {
                 let response = await fetch(
-                  "http://127.0.0.1:3000/remove-user",
+                  "https://quotequill.onrender.com/remove-user",
                   {
                     method: "DELETE",
                     headers: {

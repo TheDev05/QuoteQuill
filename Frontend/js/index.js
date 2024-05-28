@@ -56,7 +56,7 @@ $(document).ready(() => {
 
   const displayPost = async () => {
     try {
-      let response = await fetch("http://127.0.0.1:3000/displayPost", {
+      let response = await fetch("https://quotequill.onrender.com/displayPost", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -207,7 +207,7 @@ $(document).ready(() => {
 
       console.log("emails", email, password);
 
-      let response = await fetch("http://127.0.0.1:3000/guest-login", {
+      let response = await fetch("https://quotequill.onrender.com/guest-login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -282,7 +282,7 @@ $(document).ready(() => {
       let email = $("#register-email").val();
       let password = $("#register-password").val();
 
-      let response = await fetch("http://127.0.0.1:3000/guest-register", {
+      let response = await fetch("https://quotequill.onrender.com/guest-register", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -341,7 +341,7 @@ $(document).ready(() => {
       let email = $("#admin_email").val();
       let password = $("#admin_password").val();
 
-      let response = await fetch("http://127.0.0.1:3000/admin-login", {
+      let response = await fetch("https://quotequill.onrender.com/admin-login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -416,7 +416,7 @@ $(document).ready(() => {
         let isLiked = false;
         let name = "DEFAULT";
 
-        let response = await fetch("http://127.0.0.1:3000/post", {
+        let response = await fetch("https://quotequill.onrender.com/post", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

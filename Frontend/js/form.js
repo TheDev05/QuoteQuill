@@ -43,7 +43,7 @@ $(document).ready(function () {
       const city = $("city").val();
       const contact = $("contact").val();
 
-      let response = await fetch("http://127.0.0.1:3000", {
+      let response = await fetch("https://quotequill.onrender.com", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
