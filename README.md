@@ -1,6 +1,6 @@
 # QuoteQuill Application
 
-## Overview
+## Overview 
 
 This project is a full-stack web application developed using Node.js, Express.js, MongoDB, and frontend technologies. It provides functionality for user registration, authentication, and post management. The backend is built with Node.js and Express.js, providing RESTful API endpoints for user registration, login, and CRUD operations for posts. MongoDB is used as the database for storing user data and posts.
 
