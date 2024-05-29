@@ -58,12 +58,15 @@ $(document).ready(() => {
 
   const displayPost = async () => {
     try {
-      let response = await fetch("https://quotequill.onrender.com/displayPost", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      let response = await fetch(
+        "https://quotequill.onrender.com/displayPost",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       // alert("data sent");
       const temp = await response.json();
@@ -76,13 +79,21 @@ $(document).ready(() => {
       var newData = temp.data.slice(0, 2);
       console.log("here is the titlr", newData[0].title);
 
-      $(".quote-ad-title1").append(newData[0].title);
-      $(".quote-ad-desc1").text(newData[0].message);
-      $(".sign-name1").text(newData[0].name);
+      if (newData.length == 0) {
+        $("#load").css("display", "block");
+        $("#demo-quotes").css("display", "none");
+      } else {
+        $("#load").css("display", "none");
+        $("#demo-quotes").css("display", "block");
 
-      $(".quote-ad-title2").append(newData[1].title);
-      $(".quote-ad-desc2").text(newData[1].message);
-      $(".sign-name2").text(newData[1].name);
+        $(".quote-ad-title1").append(newData[0].title);
+        $(".quote-ad-desc1").text(newData[0].message);
+        $(".sign-name1").text(newData[0].name);
+
+        $(".quote-ad-title2").append(newData[1].title);
+        $(".quote-ad-desc2").text(newData[1].message);
+        $(".sign-name2").text(newData[1].name);
+      }
 
       // $(".like").css("background-color", "red");
 
@@ -209,17 +220,20 @@ $(document).ready(() => {
 
       console.log("emails", email, password);
 
-      let response = await fetch("https://quotequill.onrender.com/guest-login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-        credentials: "include",
-      });
+      let response = await fetch(
+        "https://quotequill.onrender.com/guest-login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            password,
+          }),
+          credentials: "include",
+        }
+      );
 
       //   alert("data sent");
       const temp = await response.json();
@@ -284,18 +298,21 @@ $(document).ready(() => {
       let email = $("#register-email").val();
       let password = $("#register-password").val();
 
-      let response = await fetch("https://quotequill.onrender.com/guest-register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          fname,
-          lname,
-          email,
-          password,
-        }),
-      });
+      let response = await fetch(
+        "https://quotequill.onrender.com/guest-register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            fname,
+            lname,
+            email,
+            password,
+          }),
+        }
+      );
 
       // alert("data sent");
       const temp = await response.json();
@@ -343,16 +360,19 @@ $(document).ready(() => {
       let email = $("#admin_email").val();
       let password = $("#admin_password").val();
 
-      let response = await fetch("https://quotequill.onrender.com/admin-login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-      });
+      let response = await fetch(
+        "https://quotequill.onrender.com/admin-login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            password,
+          }),
+        }
+      );
 
       const temp = await response.json();
       console.log(temp);

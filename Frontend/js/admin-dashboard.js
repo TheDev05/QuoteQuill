@@ -40,8 +40,8 @@ $(document).ready(() => {
         $(".tbody").append(`<tr>
           <th scope="row">${index + 1}</th>
           <td>${user.fname} ${user.lname}</td>
-          <td>${user.lname}</td>
           <td>${user.email}</td>
+          <td>${user.lname}</td>
           <td>${user.last_login}</td>
           <td>${user.status}</td>
           <td><div class="action">
