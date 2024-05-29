@@ -190,7 +190,7 @@ $(document).ready(() => {
 
   // Click on community check for cookie
   $("#community").click(() => {
-    if (Cookies.get("authToken")) {
+    if (Cookies.get("email")) {
       window.location.href = "user-dashboard.html";
     } else {
       $.toast({
