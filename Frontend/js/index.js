@@ -79,7 +79,7 @@ $(document).ready(() => {
       var newData = temp.data.slice(0, 2);
       console.log("here is the titlr", newData[0].title);
 
-      if (newData.length == 0) {
+      if (newData.length === 0) {
         $("#load").css("display", "block");
         $("#demo-quotes").css("display", "none");
       } else {
