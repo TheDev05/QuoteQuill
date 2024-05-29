@@ -4,6 +4,15 @@
 
 This project is a full-stack web application developed using Node.js, Express.js, MongoDB, and frontend technologies. It provides functionality for user registration, authentication, and post management. The backend is built with Node.js and Express.js, providing RESTful API endpoints for user registration, login, and CRUD operations for posts. MongoDB is used as the database for storing user data and posts.
 
+## Responsive
+![image](https://github.com/TheDev05/QuoteQuill/assets/73834703/55736b22-93cb-4e15-b1cb-c7c78f302aae)
+
+## Snippets
+![image](https://github.com/TheDev05/QuoteQuill/assets/73834703/9f265f60-a925-46e2-9f32-2f61840f3d30)
+![image](https://github.com/TheDev05/QuoteQuill/assets/73834703/b55dc946-2464-4ccb-b2be-a3623eab22b0)
+![image](https://github.com/TheDev05/QuoteQuill/assets/73834703/3bb69819-580c-4340-ac39-c07be54b06e8)
+![image](https://github.com/TheDev05/QuoteQuill/assets/73834703/3c3e7704-32db-4ce3-9cef-844456a7a991)
+
 ## Features
 
 - User registration and authentication
