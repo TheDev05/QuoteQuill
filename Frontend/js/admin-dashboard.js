@@ -39,7 +39,7 @@ $(document).ready(() => {
       temp.data.map((user, index) => {
         $(".tbody").append(`<tr>
           <th scope="row">${index + 1}</th>
-          <td>${user.fname}</td>
+          <td>${user.fname} ${user.lname}</td>
           <td>${user.lname}</td>
           <td>${user.email}</td>
           <td>${user.last_login}</td>
