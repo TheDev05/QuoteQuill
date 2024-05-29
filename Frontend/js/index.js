@@ -1,6 +1,8 @@
 $(document).ready(() => {
   // Navbar buttons hide accorindg to cookies stored
   const NavCheck = () => {
+    console.log("cookies-email", Cookies.get("authToken"));
+
     if (Cookies.get("authToken")) {
       console.log("email is there, means user is login");
       $("#post-modal").attr("id", "post-modal-false");
