@@ -180,6 +180,21 @@
         }
       }
 
+      @media screen and (max-width: 500px) {
+        .sign-name {
+          font-size: 10px !important;
+        }
+
+        footer{
+          font-size: 10px;
+        }
+
+        .github-icon,
+        .linkedin-icon {
+          font-size: 25px !important;
+        }
+      }
+
       .post-right {
         position: relative;
         left: 60%;
@@ -289,6 +304,7 @@
         align-items: center;
         padding: 10px;
       }
+
       .github-icon,
       .linkedin-icon {
         font-size: 30px;
@@ -365,10 +381,19 @@
 
       .container-fluid {
         width: 100%;
-        padding-right: 15px;
-        padding-left: 15px;
+        padding-right: 0;
+        padding-left: 0;
         margin-right: auto;
         margin-left: auto;
+      }
+
+      @media screen and (max-width: 500) {
+        .github-icon,
+        .linkedin-icon,
+        .linkedin-icon,
+        .sign-name {
+          font-size: 10px !important;
+        }
       }
     </style>
   </head>
