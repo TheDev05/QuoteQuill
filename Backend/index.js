@@ -29,7 +29,7 @@ app.use("/data", require("./Routes/registeredUser"));
 app.use("/remove-user", require("./Routes/removeUser"));
 app.use("/post", require("./Routes/post"));
 app.use("/displayPost", require("./Routes/displayPost"));
-app.use("/like", validate, require("./Routes/like"));
+app.use("/like", require("./Routes/like"));
 
 app.get("/testing", (req, res) => {
   res.send("Server Running at 3000 Port");
