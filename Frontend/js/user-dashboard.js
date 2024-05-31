@@ -52,7 +52,7 @@ $(document).ready(() => {
                 </div>
               </div>
               <div class="post-right">
-                <div class="name">${post.name}</div>
+                <div class="name">${post.first_name}</div>
               </div>
             </div>
           </div>
