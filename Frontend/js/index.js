@@ -436,7 +436,7 @@ $(document).ready(() => {
         let message = $("#message").val();
         let date = day.toLocaleString();
         let isLiked = false;
-        let name = "DEFAULT";
+        let first_name = "Ankit R.";
 
         let response = await fetch("https://quotequill.onrender.com/post", {
           method: "POST",
@@ -449,7 +449,7 @@ $(document).ready(() => {
             message,
             date,
             isLiked,
-            name,
+            first_name,
           }),
         });
 
@@ -462,6 +462,7 @@ $(document).ready(() => {
 
           //   $(".guest-login-btn").prop("disabled", false);
           //   displayPost();
+
           window.location.href = "user-dashboard.html";
         } else {
           $.toast({
