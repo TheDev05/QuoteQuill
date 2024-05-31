@@ -6,6 +6,7 @@ const post_schema = mongoose.Schema({
   date: { type: String },
   isLiked: { type: Boolean },
   first_name: { type: String },
+  email: { type: String },
 });
 
 const post_model = mongoose.model("user-posts", post_schema);
