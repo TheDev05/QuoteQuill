@@ -444,12 +444,12 @@ $(document).ready(() => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            day,
             title,
             message,
             date,
             isLiked,
             first_name,
+            email: "troll@troll.com",
           }),
         });
 
