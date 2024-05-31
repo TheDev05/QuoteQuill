@@ -60,7 +60,7 @@ $(document).ready(() => {
       `);
 
         if (post.isLiked == true) {
-          $(`#${post._id}`).css("color", "red");
+          $(`#${post._id}`).css("background-color", "red");
         }
       });
 
