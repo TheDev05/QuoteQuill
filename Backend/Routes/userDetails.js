@@ -29,7 +29,7 @@ router.post("/update", async (req, res) => {
       { $set: req.body }
     );
 
-    // console.log("data", response);
+    console.log("data", response);
     res.status(200).json({ success: true , message:"Update Succesfully"});
   } catch (error) {
     // console.log(error);

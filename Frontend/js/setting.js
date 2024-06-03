@@ -1,6 +1,9 @@
 $(document).ready(() => {
   // console.log("ready");
 
+  // Cookies.set("email", "ankit23@gmail.com");
+  // console.log(Cookies.get("email"));
+
   if (!Cookies.get("email")) {
     // alert("Login first");
     window.location.href = "index.html";
@@ -16,15 +19,18 @@ $(document).ready(() => {
 
   const getUserDetails = async () => {
     try {
-      const response = await fetch("https://quotequill.onrender.com/userDetails/fetch", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: Cookies.get("email"),
-        }),
-      });
+      const response = await fetch(
+        "https://quotequill.onrender.com/userDetails/fetch",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: Cookies.get("email"),
+          }),
+        }
+      );
 
       let temp = await response.json();
       // console.log(temp.data);
@@ -47,7 +53,6 @@ $(document).ready(() => {
 
       const updateUserDetails = async () => {
         try {
-          console.log($("#fname").val());
           const response = await fetch(
             "https://quotequill.onrender.com/userDetails/update",
             {
@@ -72,7 +77,7 @@ $(document).ready(() => {
           let temp = await response.json();
           // console.log(temp);
 
-          alert('updated')
+          alert("updated");
         } catch (error) {
           // console.log(error);
         }
