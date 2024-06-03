@@ -14,12 +14,15 @@ $(document).ready(() => {
 
   const displayPost = async () => {
     try {
-      let response = await fetch("https://quotequill.onrender.com/displayPost", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      let response = await fetch(
+        "https://quotequill.onrender.com/displayPost",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       //   alert("data sent");
       const temp = await response.json();
@@ -115,6 +118,32 @@ $(document).ready(() => {
   displayPost();
 
   $("#share").click(() => {
+    let user_name;
+    const getUserDetails = async () => {
+      try {
+        const response = await fetch(
+          "https://quotequill.onrender.com/userDetails/fetch",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email: Cookies.get("email"),
+            }),
+          }
+        );
+
+        let temp = await response.json();
+        // console.log(temp.data);
+        user_name = temp.data.fname;
+      } catch (error) {
+        // console.log(error);
+      }
+    };
+
+    getUserDetails();
+
     const post = async () => {
       try {
         const day = Date();
@@ -122,7 +151,7 @@ $(document).ready(() => {
         let message = $("#message").val();
         let date = day.toLocaleString();
         let isLiked = false;
-        let first_name = "Ankit R.";
+        let first_name = user_name;
         let email = Cookies.get("email");
 
         let response = await fetch("https://quotequill.onrender.com/post", {
