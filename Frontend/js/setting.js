@@ -49,10 +49,11 @@ $(document).ready(() => {
     }
 
     $("#submitUpdate").click(() => {
+      event.preventDefault();
+      
       // console.log("submit clicked");
 
       const updateUserDetails = async () => {
-
         console.log($("#fname").val());
         console.log($("#lname").val());
         console.log($("#bio").val());
