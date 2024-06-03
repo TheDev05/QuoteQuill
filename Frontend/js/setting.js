@@ -52,7 +52,7 @@ $(document).ready(() => {
       // console.log("submit clicked");
 
       const updateUserDetails = async () => {
-        
+
         console.log($("#fname").val());
         console.log($("#lname").val());
         console.log($("#bio").val());
@@ -81,7 +81,7 @@ $(document).ready(() => {
           );
 
           let temp = await response.json();
-          // console.log(temp);
+          console.log(temp);
 
           alert("updated");
         } catch (error) {
