@@ -13,7 +13,6 @@ router.post("/fetch", async (req, res) => {
     // console.log("data", data);
     res.status(200).json({ success: true, data: data });
   } catch (error) {
-    // console.log(error);
     res.status(400).json({ success: false, message: error });
   }
 });

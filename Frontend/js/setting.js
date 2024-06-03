@@ -5,7 +5,6 @@ $(document).ready(() => {
   // console.log(Cookies.get("email"));
 
   if (!Cookies.get("email")) {
-    // alert("Login first");
     window.location.href = "index.html";
   }
 
