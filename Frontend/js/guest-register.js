@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  console.log("object");
+  // console.log("object");
 
   const submit = async () => {
     try {
@@ -23,18 +23,18 @@ $(document).ready(() => {
 
       //   alert("data sent");
       const temp = await response.json();
-      console.log(temp);
+      // console.log(temp);
 
       if (temp.success) {
         alert(temp.message);
-        Cookies.set("email", email);
+        Cookies.set("email-trial", email);
         $(".register_btn").prop("disabled", false);
         window.location.href = "guest-login.html";
       } else {
         alert(temp.message);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
 
     $(".register_btn").prop("disabled", false);

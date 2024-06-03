@@ -10,7 +10,8 @@ router.get("/", async (req, res) => {
     const collection = post_model;
     const response = await collection.find();
     // console.log("all post sent");
-    // console.log(response);
+    // console.log(response[0]._id);
+    // console.log(response[0].title);
 
     res.status(200).json({ data: response });
 

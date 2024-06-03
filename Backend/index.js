@@ -11,7 +11,7 @@ app.use(cookieParser());
 app.use(express.json());
 
 // CORS
-app.use( 
+app.use(
   cors({
     origin: ["https://quotequill.vercel.app"],
     // origin: ["http://127.0.0.1:5500"],
@@ -30,6 +30,9 @@ app.use("/remove-user", require("./Routes/removeUser"));
 app.use("/post", require("./Routes/post"));
 app.use("/displayPost", require("./Routes/displayPost"));
 app.use("/like", require("./Routes/like"));
+app.use("/fetchUserAllPosts", require("./Routes/fetchUserAllPosts"));
+app.use("/removePost", require("./Routes/removePost"));
+app.use("/userDetails", require("./Routes/userDetails"));
 
 app.get("/testing", (req, res) => {
   res.send("Server Running at 3000 Port");

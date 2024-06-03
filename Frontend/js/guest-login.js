@@ -1,7 +1,7 @@
 $(document).ready(() => {
-  console.log("object");
+  // console.log("object");
 
-  $("#email").attr("value", Cookies.get("email"));
+  $("#email").attr("value", Cookies.get("email-trial"));
 
   const submit = async () => {
     try {
@@ -21,19 +21,19 @@ $(document).ready(() => {
 
       //   alert("data sent");
       const temp = await response.json();
-      console.log(temp);
+      // console.log(temp);
 
       if (temp.success) {
         alert(temp.message);
-        Cookies.set("email", email);
-        console.log(Cookies.get("email"));
+        // Cookies.set("email", email);
+        // console.log("email-cookies", Cookies.get("email"));
         $(".guest-login-btn").prop("disabled", false);
         window.location.href = "user-dashboard.html";
       } else {
         alert(temp.message);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
 
     $(".guest-login-btn").prop("disabled", false);

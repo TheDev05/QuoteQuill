@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
 
 const database = require("../db");
 const form_user_model = require("../Models/form_user_model");
@@ -18,8 +19,16 @@ router.post("/", async (req, res) => {
     if (response) {
       res.status(400).json({ success: false, message: "user already exist" });
     } else {
-      collection.create(req.body);
-      res.status(201).json({ success: true, message: "User Registered" });
+      bcrypt.hash(req.body.password, 10, (err, hash) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+
+        req.body.password = hash;
+        collection.create(req.body);
+        res.status(201).json({ success: true, message: "User Registered" });
+      });
     }
   } catch (error) {
     console.log(error);

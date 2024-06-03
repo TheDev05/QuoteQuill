@@ -1,10 +1,8 @@
 $(document).ready(() => {
-  // console.log("active");
-
-  // if (!Cookies.get("email")) {
-  //   alert("Login first");
-  //   window.location.href = "index.html";
-  // }
+  if (!Cookies.get("email")) {
+    alert("Login first");
+    window.location.href = "index.html";
+  }
 
   $("#logout").click(() => {
     sessionStorage.setItem("toastMessage", "Logout Succesful");
@@ -47,9 +45,9 @@ $(document).ready(() => {
                 <div class="like" id=${post._id}>
                   <i class="fa fa-heart"></i>
                 </div>
-                <div class="copy" id="copyButton">
-                  <i class="copy-icon fa fa-copy fa-1x"></i>
-                </div>
+                <div class="quote_like_count">
+                   ${post.likeCount}
+                  </div>
               </div>
               <div class="post-right">
                 <div class="name">${post.first_name}</div>
@@ -59,7 +57,7 @@ $(document).ready(() => {
         </div>
       `);
 
-        if (post.isLiked == true) {
+        if (post.isLiked) {
           $(`#${post._id}`).css("background-color", "red");
         }
       });
@@ -67,14 +65,15 @@ $(document).ready(() => {
       $(".like").click(async function (event) {
         // console.log("clicked");
 
-        const postId = $(event.currentTarget).attr("id");
-        let postIsLiked = false;
+        // console.log(postIsLiked);
 
-        temp.data.map((value) => {
-          if (value._id == postId) {
-            if (value.isLiked == true) postIsLiked = true;
-          }
-        });
+        const postId = $(event.currentTarget).attr("id");
+
+        // temp.data.map((value) => {
+        //   if (value._id == postId) {
+        //     if (value.isLiked == true) postIsLiked = true;
+        //   }
+        // });
 
         const likeThis = async () => {
           try {
@@ -84,8 +83,8 @@ $(document).ready(() => {
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
-                postIsLiked,
                 id: postId,
+                email: Cookies.get("email"),
               }),
               credentials: "include",
             });
@@ -102,14 +101,14 @@ $(document).ready(() => {
 
             location.reload();
           } catch (error) {
-            console.log(error);
+            // console.log(error);
           }
         };
 
         likeThis();
       });
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -123,7 +122,8 @@ $(document).ready(() => {
         let message = $("#message").val();
         let date = day.toLocaleString();
         let isLiked = false;
-        let name = "DEFAULT";
+        let first_name = "Ankit R.";
+        let email = Cookies.get("email");
 
         let response = await fetch("https://quotequill.onrender.com/post", {
           method: "POST",
@@ -131,31 +131,40 @@ $(document).ready(() => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            day,
             title,
             message,
             date,
             isLiked,
-            name,
+            first_name,
+            email,
           }),
-          credentials: "include",
         });
 
         //   alert("data sent");
         const temp = await response.json();
-        console.log(temp);
+        // console.log(temp);
 
         if (temp.success) {
           alert(temp.message);
           //   $(".guest-login-btn").prop("disabled", false);
           //   displayPost();
-          sessionStorage.setItem("toastMessage", "Posted");
+          $("#post-modal").modal("hide");
+
+          // $.toast({
+          //   heading: "Success",
+          //   text: "Aa",
+          //   icon: "success",
+          // });
+
+          // sessionStorage.setItem("toastMessage", "Posted");
+          // window.location.reload();
+
           window.location.href = "user-dashboard.html";
         } else {
           alert(temp.message);
         }
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
     };
 

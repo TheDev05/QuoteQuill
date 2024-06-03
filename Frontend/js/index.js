@@ -4,7 +4,7 @@ $(document).ready(() => {
     // console.log("cookies-email", Cookies.get("authToken"));
 
     if (Cookies.get("email")) {
-      console.log("email is there, means user is login");
+      // console.log("email is there, means user is login");
       $("#post-modal").attr("id", "post-modal-false");
       $("#post-modal-false").attr("id", "post-modal");
 
@@ -15,7 +15,7 @@ $(document).ready(() => {
         "block"
       );
     } else {
-      console.log("email is not there");
+      // console.log("email is not there");
       $("#post-modal-false").attr("id", "post-modal");
       $("#post-modal").attr("id", "post-modal-false");
 
@@ -30,7 +30,7 @@ $(document).ready(() => {
   NavCheck();
 
   // Two post at main page starts
-  console.log("Two posts at main page");
+  // console.log("Two posts at main page");
 
   if (sessionStorage.getItem("toastMessage")) {
     $.toast({
@@ -58,26 +58,23 @@ $(document).ready(() => {
 
   const displayPost = async () => {
     try {
-      let response = await fetch(
-        "https://quotequill.onrender.com/displayPost",
-        {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      let response = await fetch("https://quotequill.onrender.com/displayPost", {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
 
       // alert("data sent");
       const temp = await response.json();
       // console.log(temp.data);
 
       temp.data.reverse();
-      console.log(temp.data[0]);
-      console.log(temp.data[1]);
+      // console.log(temp.data[0]);
+      // console.log(temp.data[1]);
 
       var newData = temp.data.slice(0, 2);
-      console.log("here is the titlr", newData[0].title);
+      // console.log("here is the titlr", newData[0].title);
 
       if (newData.length === 0) {
         $("#load").css("display", "block");
@@ -130,7 +127,7 @@ $(document).ready(() => {
       // });
 
       // $(".like").click(async function (event) {
-      //   // console.log("clicked");
+        // console.log("clicked");
 
       //   const postId = $(event.currentTarget).attr("id");
       //   let postIsLiked = false;
@@ -161,7 +158,7 @@ $(document).ready(() => {
 
       //       // alert("liked");
       //       const temp = await response.json();
-      //       // console.log("Server response", temp);
+            // console.log("Server response", temp);
 
       //       if (temp.success) {
       //         // alert(temp.message);
@@ -171,25 +168,25 @@ $(document).ready(() => {
 
       //       location.reload();
       //     } catch (error) {
-      //       console.log(error);
+            // console.log(error);
       //     }
       //   };
 
       //   likeThis();
       // });
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
   displayPost();
 
   // User-login-started
-  console.log("user login");
+  // console.log("user login");
 
   // Cookies.set("email", "Aaa");
 
-  console.log(Cookies.get("email"));
+  // console.log(Cookies.get("email"));
 
   // Logout
   $("#logout").click(() => {
@@ -218,22 +215,19 @@ $(document).ready(() => {
       let email = $("#user-login-email").val();
       let password = $("#user-login-password").val();
 
-      console.log("emails", email, password);
+      // console.log("emails", email, password);
 
-      let response = await fetch(
-        "https://quotequill.onrender.com/guest-login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email,
-            password,
-          }),
-          credentials: "include",
-        }
-      );
+      let response = await fetch("https://quotequill.onrender.com/guest-login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+        credentials: "include",
+      });
 
       //   alert("data sent");
       const temp = await response.json();
@@ -244,8 +238,8 @@ $(document).ready(() => {
         $("#post-modal").modal("hide");
 
         Cookies.set("email", email);
-        console.log("cookies-email", Cookies.get("authToken"));
-        console.log("logined");
+        // console.log(Cookies.get("authToken"));
+        // console.log("logined");
 
         sessionStorage.setItem("toastMessage", temp.message);
         NavCheck();
@@ -262,7 +256,7 @@ $(document).ready(() => {
         });
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
 
     $(".guest-login-btn").prop("disabled", false);
@@ -280,7 +274,7 @@ $(document).ready(() => {
         icon: "error",
       });
     } else {
-      console.log(" bt clicked");
+      // console.log(" bt clicked");
       $(".guest-login-btn").prop("disabled", true);
       user_login_submit();
     }
@@ -289,7 +283,7 @@ $(document).ready(() => {
   });
 
   // User-register-started
-  console.log("user registration");
+  // console.log("user registration");
 
   const user_registration_submit = async () => {
     try {
@@ -298,26 +292,23 @@ $(document).ready(() => {
       let email = $("#register-email").val();
       let password = $("#register-password").val();
 
-      let response = await fetch(
-        "https://quotequill.onrender.com/guest-register",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            fname,
-            lname,
-            email,
-            password,
-          }),
-        }
-      );
+      let response = await fetch("https://quotequill.onrender.com/guest-register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fname,
+          lname,
+          email,
+          password,
+        }),
+      });
 
       // alert("data sent");
       const temp = await response.json();
       // alert("response");
-      console.log(temp);
+      // console.log(temp);
 
       if (temp.success) {
         $(".register_btn").prop("disabled", false);
@@ -328,8 +319,8 @@ $(document).ready(() => {
           icon: "success",
         });
 
-        Cookies.set("email", email);
-        $("#user-login-email").attr("value", Cookies.get("email"));
+        Cookies.set("email-trial", email);
+        $("#user-login-email").attr("value", Cookies.get("email-trial"));
         $("#post-modal").modal("show");
       } else {
         $.toast({
@@ -340,7 +331,7 @@ $(document).ready(() => {
         });
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
 
     $(".register_btn").prop("disabled", false);
@@ -353,29 +344,26 @@ $(document).ready(() => {
   });
 
   // Admin login starts
-  console.log("admin login");
+  // console.log("admin login");
 
   const admin_submit = async () => {
     try {
       let email = $("#admin_email").val();
       let password = $("#admin_password").val();
 
-      let response = await fetch(
-        "https://quotequill.onrender.com/admin-login",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            email,
-            password,
-          }),
-        }
-      );
+      let response = await fetch("https://quotequill.onrender.com/dmin-login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email,
+          password,
+        }),
+      });
 
       const temp = await response.json();
-      console.log(temp);
+      // console.log(temp);
 
       if (temp.success) {
         $(".admin-login-btn").prop("disabled", false);
@@ -394,7 +382,7 @@ $(document).ready(() => {
         });
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
 
     $(".admin-login-btn").prop("disabled", false);
@@ -407,7 +395,7 @@ $(document).ready(() => {
   });
 
   // Two  post advertisemtn on first page
-  console.log("2 Posts at Front");
+  // console.log("2 Posts at Front");
 
   //   if (!Cookies.get("email")) {
   //     alert("Login first");
@@ -421,14 +409,15 @@ $(document).ready(() => {
 
   // Post from main page starts
   //   $("#post").click(() => {
-  //     console.log("post");
+      // console.log("post");
   //     if (Cookies.get("email")) {
   //       $("#post-modal").modal("hide");
-  //       console.log("you will mke a post");
+        // console.log("you will mke a post");
   //     }
   //   });
 
   $("#share").click(() => {
+    // console.log("share click");
     const post = async () => {
       try {
         const day = Date();
@@ -437,6 +426,7 @@ $(document).ready(() => {
         let date = day.toLocaleString();
         let isLiked = false;
         let first_name = "Ankit R.";
+        let email = Cookies.get("email");
 
         let response = await fetch("https://quotequill.onrender.com/post", {
           method: "POST",
@@ -449,13 +439,13 @@ $(document).ready(() => {
             date,
             isLiked,
             first_name,
-            email: "troll@troll.com",
+            email,
           }),
         });
 
         //   alert("data sent");
         const temp = await response.json();
-        console.log(temp);
+        // console.log(temp);
 
         if (temp.success) {
           sessionStorage.setItem("toastMessage", "Shared");
@@ -473,7 +463,7 @@ $(document).ready(() => {
           });
         }
       } catch (error) {
-        console.log(error);
+        // console.log(error);
       }
     };
 

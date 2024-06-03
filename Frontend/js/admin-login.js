@@ -20,7 +20,7 @@ $(document).ready(() => {
       });
 
       const temp = await response.json();
-      console.log(temp);
+      // console.log(temp);
 
       if (temp.success) {
         alert(temp.message);
@@ -33,7 +33,7 @@ $(document).ready(() => {
         alert(temp.message);
       }
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
 
     $(".admin-login-btn").prop("disabled", false);

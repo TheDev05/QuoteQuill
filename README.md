@@ -46,6 +46,8 @@ The application is deployed on cloud platforms like Vercel and Render. Access th
 
 This project is licensed under the MIT License.
 
-## Support
+### To-Do List
 
-For support, contact [thedev05@outlook.com].
+- [ ] Password Hashing
+- [x] Profile Section
+- [x] JWT Session Management
