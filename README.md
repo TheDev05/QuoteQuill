@@ -9,9 +9,13 @@ This project is a full-stack web application developed using Node.js, Express.js
 
 ## Snippets
 ![image](https://github.com/TheDev05/QuoteQuill/assets/73834703/9f265f60-a925-46e2-9f32-2f61840f3d30)
-![image](https://github.com/TheDev05/QuoteQuill/assets/73834703/b55dc946-2464-4ccb-b2be-a3623eab22b0)
+![image](https://github.com/TheDev05/QuoteQuill/assets/73834703/78a54229-7700-4cb7-ae0f-f011a3fbc2c8)
 ![image](https://github.com/TheDev05/QuoteQuill/assets/73834703/3bb69819-580c-4340-ac39-c07be54b06e8)
-![image](https://github.com/TheDev05/QuoteQuill/assets/73834703/3c3e7704-32db-4ce3-9cef-844456a7a991)
+![image](https://github.com/TheDev05/QuoteQuill/assets/73834703/ca5c743d-3322-42db-b81d-0a6595133d22)
+![image](https://github.com/TheDev05/QuoteQuill/assets/73834703/66a3af57-6ab7-41ce-b213-47b78efbb2dd)
+![image](https://github.com/TheDev05/QuoteQuill/assets/73834703/34011b08-4214-48f1-8e75-d1dedd8f9d05)
+![image](https://github.com/TheDev05/QuoteQuill/assets/73834703/5530f082-baec-49da-a91b-59b6cfd1970b)
+
 
 ## Features
 
