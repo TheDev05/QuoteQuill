@@ -76,7 +76,7 @@ $(document).ready(() => {
         //   if (value._id == postId) {
         //     if (value.isLiked == true) postIsLiked = true;
         //   }
-        // });
+        // }); 
 
         const likeThis = async () => {
           try {

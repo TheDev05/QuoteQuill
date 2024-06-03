@@ -58,12 +58,15 @@ $(document).ready(() => {
 
   const displayPost = async () => {
     try {
-      let response = await fetch("https://quotequill.onrender.com/displayPost", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      let response = await fetch(
+        "https://quotequill.onrender.com/displayPost",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
 
       // alert("data sent");
       const temp = await response.json();
@@ -127,7 +130,7 @@ $(document).ready(() => {
       // });
 
       // $(".like").click(async function (event) {
-        // console.log("clicked");
+      // console.log("clicked");
 
       //   const postId = $(event.currentTarget).attr("id");
       //   let postIsLiked = false;
@@ -158,7 +161,7 @@ $(document).ready(() => {
 
       //       // alert("liked");
       //       const temp = await response.json();
-            // console.log("Server response", temp);
+      // console.log("Server response", temp);
 
       //       if (temp.success) {
       //         // alert(temp.message);
@@ -168,7 +171,7 @@ $(document).ready(() => {
 
       //       location.reload();
       //     } catch (error) {
-            // console.log(error);
+      // console.log(error);
       //     }
       //   };
 
@@ -217,17 +220,20 @@ $(document).ready(() => {
 
       // console.log("emails", email, password);
 
-      let response = await fetch("https://quotequill.onrender.com/guest-login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email,
-          password,
-        }),
-        credentials: "include",
-      });
+      let response = await fetch(
+        "https://quotequill.onrender.com/guest-login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            password,
+          }),
+          credentials: "include",
+        }
+      );
 
       //   alert("data sent");
       const temp = await response.json();
@@ -292,18 +298,21 @@ $(document).ready(() => {
       let email = $("#register-email").val();
       let password = $("#register-password").val();
 
-      let response = await fetch("https://quotequill.onrender.com/guest-register", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          fname,
-          lname,
-          email,
-          password,
-        }),
-      });
+      let response = await fetch(
+        "https://quotequill.onrender.com/guest-register",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            fname,
+            lname,
+            email,
+            password,
+          }),
+        }
+      );
 
       // alert("data sent");
       const temp = await response.json();
@@ -409,15 +418,45 @@ $(document).ready(() => {
 
   // Post from main page starts
   //   $("#post").click(() => {
-      // console.log("post");
+  // console.log("post");
   //     if (Cookies.get("email")) {
   //       $("#post-modal").modal("hide");
-        // console.log("you will mke a post");
+  // console.log("you will mke a post");
   //     }
   //   });
 
   $("#share").click(() => {
     // console.log("share click");
+    let user_name;
+
+    const getUserDetails = async () => {
+      try {
+        const response = await fetch(
+          "https://quotequill.onrender.com/userDetails/fetch",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              email: Cookies.get("email"),
+            }),
+          }
+        );
+
+        let temp = await response.json();
+        // console.log(temp.data);
+        user_name = temp.data.fname;
+        // console.log("name", user_name);
+      } catch (error) {
+        // console.log(error);
+      }
+
+      post();
+    };
+
+    getUserDetails();
+
     const post = async () => {
       try {
         const day = Date();
@@ -425,7 +464,7 @@ $(document).ready(() => {
         let message = $("#message").val();
         let date = day.toLocaleString();
         let isLiked = false;
-        let first_name = "Ankit R.";
+        let first_name = user_name;
         let email = Cookies.get("email");
 
         let response = await fetch("https://quotequill.onrender.com/post", {
