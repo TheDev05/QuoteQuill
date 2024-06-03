@@ -119,6 +119,7 @@ $(document).ready(() => {
 
   $("#share").click(() => {
     let user_name;
+
     const getUserDetails = async () => {
       try {
         const response = await fetch(
@@ -137,14 +138,19 @@ $(document).ready(() => {
         let temp = await response.json();
         // console.log(temp.data);
         user_name = temp.data.fname;
+        // console.log("name", user_name);
       } catch (error) {
         // console.log(error);
       }
+
+      post();
     };
 
     getUserDetails();
 
     const post = async () => {
+      console.log(user_name);
+
       try {
         const day = Date();
         let title = $("#title").val();
@@ -196,7 +202,5 @@ $(document).ready(() => {
         // console.log(error);
       }
     };
-
-    post();
   });
 });
