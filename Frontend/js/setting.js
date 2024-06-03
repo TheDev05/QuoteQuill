@@ -48,9 +48,9 @@ $(document).ready(() => {
       // console.log(error);
     }
 
-    $("#submitUpdate").click(() => {
+    $("#submitUpdate").click((event) => {
       event.preventDefault();
-      
+
       // console.log("submit clicked");
 
       const updateUserDetails = async () => {
