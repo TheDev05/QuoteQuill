@@ -52,6 +52,12 @@ $(document).ready(() => {
       // console.log("submit clicked");
 
       const updateUserDetails = async () => {
+        
+        console.log($("#fname").val());
+        console.log($("#lname").val());
+        console.log($("#bio").val());
+        console.log($("#city").val());
+
         try {
           const response = await fetch(
             "https://quotequill.onrender.com/userDetails/update",
