@@ -18,10 +18,8 @@ router.post("/fetch", async (req, res) => {
   }
 });
 
-
 router.post("/update", async (req, res) => {
   try {
-    
     await database();
     const collection = form_user_model;
     const response = await collection.updateOne(
@@ -30,7 +28,9 @@ router.post("/update", async (req, res) => {
     );
 
     console.log("data", response);
-    res.status(200).json({ success: true , message:"Update Succesfully"});
+    res
+      .status(200)
+      .json({ success: true, data: req.body, message: "Update Succesfully" });
   } catch (error) {
     // console.log(error);
     res.status(400).json({ success: false, message: error });
