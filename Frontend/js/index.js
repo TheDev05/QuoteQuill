@@ -88,11 +88,11 @@ $(document).ready(() => {
 
         $(".quote-ad-title1").append(newData[0].title);
         $(".quote-ad-desc1").text(newData[0].message);
-        $(".sign-name1").text(newData[0].name);
+        $(".sign-name1").text(newData[0].first_name);
 
         $(".quote-ad-title2").append(newData[1].title);
         $(".quote-ad-desc2").text(newData[1].message);
-        $(".sign-name2").text(newData[1].name);
+        $(".sign-name2").text(newData[1].first_name);
       }
 
       // $(".like").css("background-color", "red");
